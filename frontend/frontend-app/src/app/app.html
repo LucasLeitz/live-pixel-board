@@ -1,0 +1,16 @@
+<h1>Pixel Board</h1>
+
+<div class="toolbar">
+  <label>Select Color:</label>
+  <input type="color" [(ngModel)]="selectedColor" />
+</div>
+
+<div class="grid">
+  @for (cellColor of cells; track $index) {
+    <button
+      class="cell"
+      [style.background-color]="cellColor"
+      (click)="paintCell($index)">
+    </button>
+  }
+</div>

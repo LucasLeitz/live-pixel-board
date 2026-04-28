@@ -1,13 +1,54 @@
-# Default ignored files
-/shelf/
-/.idea/workspace.xml
-# Editor-based HTTP Client requests
-/httpRequests/
-# Ignored default folder with query files
-/queries/
-# Datasource local storage ignored files
-/dataSources/
-/dataSources.local.xml
+# ========================
+# OS Files
+# ========================
+.DS_Store
+Thumbs.db
 
+# ========================
+# IDE / Editors
+# ========================
 .idea/
+.vscode/
+*.iml
+.project
+.classpath
+.settings/
+.c9/
+*.launch
+.history/
 
+# ========================
+# Node / Angular
+# ========================
+node_modules/
+dist/
+.angular/
+tmp/
+out-tsc/
+coverage/
+npm-debug.log*
+yarn-error.log*
+.sass-cache/
+
+# ========================
+# Java / Spring Boot
+# ========================
+target/
+build/
+*.log
+
+# ========================
+# IntelliJ HTTP Requests
+# ========================
+httpRequests/
+
+# ========================
+# Local / Temp / Misc
+# ========================
+queries/
+dataSources/
+dataSources.local.xml
+connect.lock
+testem.log
+typings/
+__screenshots__/
