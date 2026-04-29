@@ -3,14 +3,34 @@
 <div class="toolbar">
   <label>Select Color:</label>
   <input type="color" [(ngModel)]="selectedColor" />
+
+  <button (click)="clearBoard()">Clear Board</button>
+
+  <label>Grid Size:</label>
+  <select
+    [ngModel]="rows"
+    (ngModelChange)="changeGridSize($event)">
+    <option [ngValue]="10">10x10</option>
+    <option [ngValue]="20">20x20</option>
+    <option [ngValue]="30">30x30</option>
+  </select>
+
+  <button (click)="saveBoardAsImage()">Save Image</button>
+
 </div>
 
-<div class="grid">
+<div #board class="grid"
+     [style.grid-template-columns]="'repeat(' + cols + ', 1fr)'"
+     [style.grid-template-rows]="'repeat(' + rows + ', 1fr)'"
+     (mouseleave)="stopPainting()"
+     (mouseup)="stopPainting()">
   @for (cellColor of cells; track $index) {
     <button
       class="cell"
       [style.background-color]="cellColor"
-      (click)="paintCell($index)">
+      (mousedown)="startPainting($index)"
+      (mouseenter)="paintCellOnDrag($index)"
+      (mouseup)="stopPainting()">
     </button>
   }
 </div>

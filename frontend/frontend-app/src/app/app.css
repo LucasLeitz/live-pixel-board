@@ -1,30 +1,131 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  padding: 30px;
+  box-sizing: border-box;
+  background:
+    radial-gradient(circle at 20% 20%, #ff7ad9 0 8%, transparent 9%),
+    radial-gradient(circle at 80% 15%, #68e1fd 0 7%, transparent 8%),
+    radial-gradient(circle at 15% 80%, #ffe66d 0 9%, transparent 10%),
+    linear-gradient(135deg, #7b2ff7, #f107a3);
+  font-family: "Comic Sans MS", "Trebuchet MS", system-ui, sans-serif;
+}
+
 h1 {
   text-align: center;
+  font-size: 52px;
+  margin: 0 0 20px;
+  color: #fff200;
+  text-shadow:
+    4px 4px 0 #000,
+    7px 7px 0 #ff3b3b;
+  letter-spacing: 2px;
 }
 
 .toolbar {
+  width: fit-content;
+  margin: 0 auto 22px;
+  padding: 14px 18px;
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin-bottom: 20px;
+  align-items: center;
+  gap: 12px;
+
+  background: #fff7c7;
+  border: 4px solid #000;
+  border-radius: 18px;
+  box-shadow: 8px 8px 0 #000;
+}
+
+.toolbar label {
+  font-weight: 900;
+  color: #111;
+}
+
+.toolbar input[type="color"] {
+  width: 52px;
+  height: 38px;
+  padding: 3px;
+  border: 3px solid #000;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+}
+
+.toolbar button,
+.toolbar select {
+  font-family: inherit;
+  font-weight: 900;
+  font-size: 14px;
+  padding: 9px 13px;
+
+  background: #7df9ff;
+  border: 3px solid #000;
+  border-radius: 10px;
+  box-shadow: 4px 4px 0 #000;
+  cursor: pointer;
+}
+
+.toolbar button:hover,
+.toolbar select:hover,
+.toolbar input[type="color"]:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #000;
+}
+
+.toolbar button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #000;
 }
 
 .grid {
   width: 600px;
   height: 600px;
   margin: auto;
-  border: 1px solid black;
+  border: 6px solid #000;
+  background: white;
 
   display: grid;
-  grid-template-columns: repeat(20, 1fr);
-  grid-template-rows: repeat(20, 1fr);
+
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow:
+    12px 12px 0 #000,
+    0 0 0 10px #fffb00,
+    0 0 0 16px #000;
 }
 
 .cell {
-  border: 1px solid #ddd;
+  border: 1px solid #d9d9d9;
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
-  cursor: pointer;
+  cursor: crosshair;
+}
+
+.cell:hover {
+  outline: 3px solid #ff00aa;
+  outline-offset: -3px;
+  z-index: 1;
+}
+
+@media (max-width: 750px) {
+  :host {
+    padding: 18px;
+  }
+
+  h1 {
+    font-size: 38px;
+  }
+
+  .toolbar {
+    flex-wrap: wrap;
+    width: auto;
+  }
+
+  .grid {
+    width: 90vw;
+    height: 90vw;
+  }
 }
