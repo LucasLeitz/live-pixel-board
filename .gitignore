@@ -52,3 +52,10 @@ connect.lock
 testem.log
 typings/
 __screenshots__/
+
+# ========================
+# Backend
+# ========================
+backend/build/
+backend/.gradle/
+out/
