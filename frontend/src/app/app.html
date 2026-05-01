@@ -1,5 +1,9 @@
 <h1>Pixel Board</h1>
 
+<div class="connection-status" [class.connected]="isConnected" [class.disconnected]="!isConnected">
+  {{ isConnected ? 'Connected' : 'Disconnected' }}
+</div>
+
 <div class="toolbar">
   <label>Select Color:</label>
   <input type="color" [(ngModel)]="selectedColor" />

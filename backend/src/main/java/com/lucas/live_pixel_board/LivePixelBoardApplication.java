@@ -1,4 +1,4 @@
-package com.lucasleitz.live_pixel_board;
+package com.lucas.live_pixel_board;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
